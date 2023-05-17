@@ -1,9 +1,13 @@
 // JavaScript Document
 const circle = document.querySelector("span:nth-of-type(3)");
+const logo = document.querySelector("h1");
 
 circle.addEventListener("animationend", () => {
-  console.log("Animation ended");
   circle.style.animation = "rotate 4s linear infinite";
+  console.log("Animation ended");
 });
 
-// circle.style.animation = 'roll 4s ease-in'; // Start a new animation
+logo.addEventListener("click", () => {
+  circle.style.animation = "roll 4s ease-in-out";
+  console.log("Click!");
+});

@@ -51,15 +51,18 @@ summary {
 
 /****************/
 
+html {
+  display: flex;
+  justify-content: center;
+}
+
 body {
   font-family: "avant garde", sans-serif;
   color: var(--color-text);
   background-color: var(--color-background);
   display: flex;
   justify-content: center;
-  position: absolute;
-  top: 30%;
-  left: 38%;
+
 }
 
 body h1 {
@@ -68,23 +71,30 @@ body h1 {
   justify-content: center;
   flex-wrap: wrap;
   width: 11em;
-
 }
+
+/* M M */
 
 span:nth-of-type(n + 1):nth-of-type(-n + 2) {
   font-weight: 800;
   font-size: 4em;
 }
 
+/* M M Animatie */
+
+@keyframes push {
+
+}
+
 /* Cijfer */
 
-span:nth-of-type(3){
+span:nth-of-type(3) {
   position: relative;
   font-size: 2.4em;
   font-weight: 400;
   border-style: solid;
-  border-width: 8px;
-  border-color: #111;
+  border-width:6px;
+  border-color:var(--color-text);
   border-radius: 100%;
   padding: 0% 7.2% 0% 7.2%;
   animation: roll 4s ease-in;
@@ -103,6 +113,11 @@ span:nth-of-type(3){
     transform: rotate(360deg);
   }
 
+  90% {
+    left: 0;
+    transform: rotate(-40deg);
+  }
+
   100% {
     left: 0;
     transform: rotate(0deg);
@@ -111,10 +126,10 @@ span:nth-of-type(3){
 
 @keyframes rotate {
   0% {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
 }
 /*****/
@@ -136,4 +151,37 @@ span:nth-of-type(5) {
 
 /*****/
 
-/* jouw code */
+/* Media queries voor Responsiveness en Dark Mode */
+
+
+@media (max-width: 400px) {
+
+  html{
+display: flex;
+justify-content: center;
+  }
+
+  body{
+    width: 11em;
+  }
+
+  span:nth-of-type(n + 1):nth-of-type(-n + 2){
+    font-size: 2em;
+  }
+
+  span:nth-of-type(3) {
+    font-size: 1.1em;
+    border-radius: 100%;
+    border-width: 4px;
+    padding: 0% 12px 0% 12px;
+  }
+
+  span:nth-of-type(4) {
+    margin-top: -7%;
+    font-size: 0.65em;
+  }
+
+  span:nth-of-type(5) {
+    font-size: 0.4em;
+  }
+}
