@@ -1,57 +1,135 @@
 /* CSS Document */
 
 /*********/
+
 /* FONTS */
+
 /*********/
+
 @font-face {
-	font-family: 'eenfont';
-	src: url('../fonts/eenfont.woff2') format('woff2'),
-			 url('../fonts/eenfont.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-
+  font-family: "Avant garde";
+  src: url("../fonts/itc_avant_garde_gothic_std_medium-webfont.woff2")
+      format("woff2"),
+    url("../fonts/itc_avant_garde_gothic_std_medium-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-
-
-
-
 /**************/
+
 /* CSS REMEDY */
+
 /**************/
-*, *::after, *::before {
-  box-sizing:border-box;  
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
-button:not(:disabled), summary {
-	cursor: pointer;
+button:not(:disabled),
+summary {
+  cursor: pointer;
 }
-
-
-
-
 
 /*********************/
+
 /* CUSTOM PROPERTIES */
+
 /*********************/
+
 :root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+  /* startje */
+  --color-text: #111;
+  --color-background: #eee;
 }
 
-
-
-
-
 /****************/
+
 /* JOUW STYLING */
+
 /****************/
+
 body {
-  font-family:eenfont, sans-serif;
-  color:var(--color-text);
-  background-color:var(--color-background);
+  font-family: "avant garde", sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  display: flex;
+  justify-content: center;
 }
+
+body h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 11em;
+  margin-top: 15%;
+}
+
+span:nth-of-type(n + 1):nth-of-type(-n + 2) {
+  font-weight: 800;
+  font-size: 4em;
+
+
+}
+
+/* Cijfer */
+
+span:nth-of-type(3) {
+position: relative;
+  font-size: 2.4em;
+  font-weight: 400;
+  border-style: solid;
+  border-width: 8px;
+  border-color: #111;
+  border-radius: 100%;
+  padding: 0% 7% 0% 7%;
+  animation: roll 4s ease-in infinite;
+  animation-delay: 2s;
+  
+}
+
+/* Cijfer Animatie */
+
+@keyframes roll {
+
+    0% {
+        left: 0;
+        transform: rotate(0deg);
+    }
+
+    25%{
+        left: 30%;
+        transform: rotate(360deg);
+        
+    }
+    
+    100% {
+      left: 0;
+      transform: rotate(0deg);
+      
+  }
+
+}
+/*****/
+
+/* Maison Margiela */
+
+span:nth-of-type(4) {
+  margin-top: -4vh;
+  font-size: 1.28em;
+}
+
+/*****/
+
+/* Paris */
+
+span:nth-of-type(5) {
+  font-size: 0.8em;
+}
+
+/*****/
 
 /* jouw code */
-
