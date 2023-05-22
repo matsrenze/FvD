@@ -62,7 +62,6 @@ body {
   background-color: var(--color-background);
   display: flex;
   justify-content: center;
-
 }
 
 body h1 {
@@ -71,10 +70,11 @@ body h1 {
   justify-content: center;
   flex-wrap: wrap;
   width: 11em;
+  overflow: hidden;
+
 }
 
 /* M M */
-
 span:nth-of-type(n + 1):nth-of-type(-n + 2) {
   font-weight: 800;
   font-size: 4em;
@@ -82,10 +82,29 @@ span:nth-of-type(n + 1):nth-of-type(-n + 2) {
 
 /* M M Animatie */
 
-@keyframes push {
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+    transform: scaleY(2);
+  }
+  50% {
+    transform: translateX(-20%);
+  }
 
+  100% {
+    transform: translateX(0);
+  }
 }
 
+@keyframes bounce2 {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20%);
+  }
+}
 /* Cijfer */
 
 span:nth-of-type(3) {
@@ -93,11 +112,12 @@ span:nth-of-type(3) {
   font-size: 2.4em;
   font-weight: 400;
   border-style: solid;
-  border-width:6px;
-  border-color:var(--color-text);
+  border-width: 6px;
+  border-color: var(--color-text);
   border-radius: 100%;
   padding: 0% 7.2% 0% 7.2%;
-  animation: roll 4s ease-in;
+  animation: roll 2s ease-in;
+  overflow: visible;
 }
 
 /* Cijfer Animatie */
@@ -109,7 +129,7 @@ span:nth-of-type(3) {
   }
 
   25% {
-    left: 30%;
+    left: 10%;
     transform: rotate(360deg);
   }
 
@@ -141,6 +161,19 @@ span:nth-of-type(4) {
   font-size: 1.28em;
 }
 
+/* Maison Margiela Animatie*/
+
+@keyframes Carrousel {
+0% {
+  transform:translateX(-120%) ;
+}
+100% {
+  transform:translateX(120%) ;
+}
+
+
+}
+
 /*****/
 
 /* Paris */
@@ -153,19 +186,17 @@ span:nth-of-type(5) {
 
 /* Media queries voor Responsiveness en Dark Mode */
 
-
 @media (max-width: 400px) {
-
-  html{
-display: flex;
-justify-content: center;
+  html {
+    display: flex;
+    justify-content: center;
   }
 
-  body{
+  body {
     width: 11em;
   }
 
-  span:nth-of-type(n + 1):nth-of-type(-n + 2){
+  span:nth-of-type(n + 1):nth-of-type(-n + 2) {
     font-size: 2em;
   }
 
