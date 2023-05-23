@@ -32,10 +32,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Ik wil een dynamische en minimalistische Animatie.
+  - Ik wil dat deze animatie responsive is.
+  - Ik wil dat de animatie slim werkt met het gebruik van Javascript genoteerd in ES6
+  - Geen classes gebruiken en geen nieuwe containers
+  - Een dark mode toevoegen.
  
 </details>
 
