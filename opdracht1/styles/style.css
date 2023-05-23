@@ -229,3 +229,10 @@ span:nth-of-type(5) {
     font-size: 0.5em;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #ffffff;
+    --color-background: #000000;
+  }
+}
