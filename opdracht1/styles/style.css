@@ -115,33 +115,43 @@ span:nth-of-type(3) {
   border-color: var(--color-text);
   border-radius: 100%;
   padding: 0% 7.2% 0% 7.2%;
-  animation: roll 2s ease-in;
-  overflow: visible;
+  animation: flip 1.5s ease-in-out;
 }
 
 /* Cijfer Animatie */
 
-@keyframes roll {
+@keyframes flip {
   0% {
-    left: 0;
-    transform: rotate(0deg);
+    transform: translateY(0) rotateY(0) skew(0deg);
   }
-
-  25% {
-    left: 10%;
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-100px) rotateY(180deg) rotateX(180deg);  
   }
-
-  90% {
-    left: 0;
-    transform: rotate(-40deg);
-  }
-
   100% {
-    left: 0;
-    transform: rotate(0deg);
+    transform: translateY(0) rotateY(360deg) skew(0deg);
   }
 }
+
+/* 0% {
+  left: 0;
+  transform: rotate(0deg);
+}
+
+25% {
+  left: 10%;
+  transform: rotate(360deg);
+}
+
+90% {
+  left: 0;
+  transform: rotate(-40deg);
+}
+
+100% {
+  left: 0;
+  transform: rotate(0deg);
+}
+} */
 
 @keyframes rotate {
   0% {
@@ -196,6 +206,7 @@ span:nth-of-type(5) {
     position: relative;
     top: 30%;
     width: 6em;
+    
   }
 
   h1 span:nth-of-type(n + 1):nth-of-type(-n + 2) {
