@@ -125,7 +125,7 @@ span:nth-of-type(3) {
     transform: translateY(0) rotateY(0) skew(0deg);
   }
   50% {
-    transform: translateY(-100px) rotateY(180deg) rotateX(180deg);  
+    transform: translateY(-100px) rotateY(180deg) rotateX(180deg);
   }
   100% {
     transform: translateY(0) rotateY(360deg) skew(0deg);
@@ -165,24 +165,20 @@ span:nth-of-type(3) {
 
 /* Maison Margiela */
 
- span:nth-of-type(4) {
+span:nth-of-type(4) {
   margin-top: -4%;
   font-size: 1.28em;
-} 
-
-
+}
 
 /* Maison Margiela Animatie*/
 
 @keyframes Carrousel {
-0% {
-  transform:translateX(-120%) ;
-}
-100% {
-  transform:translateX(120%) ;
-}
-
-
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
 }
 
 /*****/
@@ -198,7 +194,6 @@ span:nth-of-type(5) {
 /* Media queries voor Responsiveness en Dark Mode */
 
 @media (max-width: 400px) {
-
   html {
     height: 100%;
   }
@@ -206,7 +201,6 @@ span:nth-of-type(5) {
     position: relative;
     top: 30%;
     width: 6em;
-    
   }
 
   h1 span:nth-of-type(n + 1):nth-of-type(-n + 2) {
