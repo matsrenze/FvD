@@ -52,6 +52,7 @@ summary {
 /****************/
 
 html {
+  height: 100%;
   display: flex;
   justify-content: center;
 }
@@ -60,8 +61,6 @@ body {
   font-family: "avant garde", sans-serif;
   color: var(--color-text);
   background-color: var(--color-background);
-  display: flex;
-  justify-content: center;
 }
 
 body h1 {
@@ -70,7 +69,8 @@ body h1 {
   justify-content: center;
   flex-wrap: wrap;
   width: 11em;
-
+  position: relative;
+  top: 30%;
 }
 
 /* M M */
@@ -158,7 +158,6 @@ span:nth-of-type(3) {
  span:nth-of-type(4) {
   margin-top: -4%;
   font-size: 1.28em;
-  transition: 1s;
 } 
 
 
@@ -189,32 +188,33 @@ span:nth-of-type(5) {
 /* Media queries voor Responsiveness en Dark Mode */
 
 @media (max-width: 400px) {
+
   html {
-    display: flex;
-    justify-content: center;
+    height: 100%;
+  }
+  body h1 {
+    position: relative;
+    top: 30%;
+    width: 6em;
   }
 
-  body {
-    width: 11em;
-  }
-
-  span:nth-of-type(n + 1):nth-of-type(-n + 2) {
+  h1 span:nth-of-type(n + 1):nth-of-type(-n + 2) {
     font-size: 2em;
   }
 
   span:nth-of-type(3) {
-    font-size: 1.1em;
+    font-size: 1.2em;
     border-radius: 100%;
     border-width: 4px;
     padding: 0% 12px 0% 12px;
   }
 
   span:nth-of-type(4) {
-    margin-top: -7%;
+    margin-top: -5%;
     font-size: 0.65em;
   }
 
   span:nth-of-type(5) {
-    font-size: 0.4em;
+    font-size: 0.5em;
   }
 }

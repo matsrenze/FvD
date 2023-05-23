@@ -11,13 +11,16 @@ circle.addEventListener("animationend", () => {
 });
 
 body.addEventListener("click", () => {
+
 circle.style.animation = "roll 4s ease-in-out";
 
-setTimeout(() => {
+ setTimeout(() => {
   Margiela.style.animation = "Carrousel 4s ease-in infinite";
-container.style.overflow = "hidden";
+  container.style.overflow = "hidden";
 console.log("Timer done");
-}, 3000);
+}, 3000); 
 
   console.log("Click!");
 });
+
+
