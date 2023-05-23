@@ -58,12 +58,17 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Korte omschrijving met plaatje(s)
   
   Op de regel met Maison Margiela zit een scroll animatie. De grenzen van deze animatie worden bepaald door een overflow. Ik had deze overflow eerst op de parent container staan, de h1, maar dit had helaas ook invloed op de animatie van het cijfertje. Die verdween namelijk, omdat deze buiten de breedte en in een latere iteratie de hoogte van de container bewoog tijdens zijn animatie. Ik heb dit gelukkig kunnen oplossen door middel van Javascript. Ik heb namelijk gebruik gemaakt van een combinatie van de Animationend eventlistener, een SetTimeout en een beetje DOM manipulatie om ervoor te zorgen dat de scroll animatie en de overflow die daar bij hoort pas afspelen nadat de animatie van het cijfertje eindigt.
+  <br>
 
   <img src="readme-images/SS-FvD-JS.png" width="375px" alt="Javascript Screenshot">
 
 
   ### Dit was lastig/Is niet gelukt:
-  Het gebruik van keyframes was eerst nog erg onintuitief voor mij, omdat je werkt met een een begin en eindresultaat gekoppeld aan bepaalde waarde in procenten. Alles tussen deze specifieke punten wordt automatisch geanimeerd, waardoor het voor mij soms nog wat verwarrend was. Ook was het gebruiken van meerdere transforms soms moeilijk omdat deze dan verkeerd genoteerd had in mijn CSS. Gelukkig heb ik dit later onder de knie gekregen.
+  <br>
+  Het gebruik van keyframes was eerst nog erg onintuitief voor mij, omdat je werkt met een een begin en eindresultaat gekoppeld aan bepaalde waarde in procenten. Alles tussen deze specifieke punten wordt automatisch geanimeerd, waardoor het voor mij soms nog wat verwarrend was. Ook was het gebruiken van meerdere transforms soms moeilijk omdat deze dan verkeerd genoteerd had in mijn CSS. Gelukkig heb ik dit later onder de knie gekregen.\
+  
+  
+  
   </details>
  
 
