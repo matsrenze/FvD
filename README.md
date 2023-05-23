@@ -49,9 +49,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <div style="display:flex; justify-content:space-between;">
+  <div style="display:flex;">
   <img src="readme-images/SS-FvD-LightMode.png" width="375px" alt="uitomst opdracht 1">
- <img src="readme-images/SS-FvD-DarkMode.png" width="375px" alt="uitomst opdracht 1">
+ <img src="readme-images/SS-Fvd-DarkMode.png" width="375px" alt="uitomst opdracht 1">
   </div>
   ### Dit ging goed/Heb ik geleerd: 
   Korte omschrijving met plaatje(s)
