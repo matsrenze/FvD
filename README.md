@@ -49,11 +49,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <div style="display:flex; justift-content:space-between; box-shadow: 2px 2px 4px #ffffff;
-}">
+  <div style="display:flex; justift-content:space-between; box-shadow: 2px 2px 4px #ffffff;">
   <img src="readme-images/SS-FvD-LightMode.png" width="375px" alt="uitomst opdracht 1">
  <img src="readme-images/SS-Fvd-DarkMode.png" width="375px" alt="uitomst opdracht 1">
   </div>
+  
   ### Dit ging goed/Heb ik geleerd: 
   Korte omschrijving met plaatje(s)
 
@@ -61,6 +61,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Dit was lastig/Is niet gelukt:
+  Met het maken van deze animatie heb ik vooral geleerd hoe ik gebruik moet maken van de keyframes. Het gebruik van keyframes was eerst nog erg onintuitief voor mij, omdat je werkt met een een begin en eindresultaat gekoppeld aan bepaalde waarde in procenten. Alles tussen deze specifieke punten wordt automatisch geanimeerd, waardoor het voor mij soms nog wat verwarrend was. Gelukkig heb ik dit later onder de knie gekregen.
+  
+ Op de regel met Maison Margiela zit een scroll animatie. De grenzen van deze animatie worden bepaald door een overflow. Ik had deze overflow eerst op de parent container staan, de h1, maar dit had helaas ook invloed op de animatie van het cijfertje. Die verdween namelijk, omdat deze buiten de breedte en in een latere iteratie hoogte van de container bewoog tijdens zijn animatie. Ik heb dit gelukkig kunnen oplossen door middel van Javascript. Ik heb namelijk gebruik gemaakt van een combinatie van de Animationend eventlistener, een SetTimeout en een beetje DOM manipulatie om ervoor te zorgen dat de scroll animatie en de overflow die daar bij 
   Korte omschrijving met plaatje(s)
 
   <img src="readme-images/dummy-plaatje.svg" width="375px" alt="bummer">
