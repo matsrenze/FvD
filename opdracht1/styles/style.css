@@ -122,13 +122,13 @@ span:nth-of-type(3) {
 
 @keyframes flip {
   0% {
-    transform: translateY(0) rotateY(0) skew(0deg);
+    transform: translateY(0) rotateY(0);
   }
   50% {
     transform: translateY(-100px) rotateY(180deg) rotateX(180deg);
   }
   100% {
-    transform: translateY(0) rotateY(360deg) skew(0deg);
+    transform: translateY(0) rotateY(360deg);
   }
 }
 

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="505" height="505" viewBox="0 0 505 505">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientTransform="translate(1) rotate(90)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#260c0c"/>
+      <stop offset="0.67" stop-color="#260c0c"/>
+      <stop offset="1" stop-color="#260c0c" stop-opacity="0.831"/>
+    </radialGradient>
+  </defs>
+  <g id="Group_4" data-name="Group 4" transform="translate(-514 -256)">
+    <path id="Path_11" data-name="Path 11" d="M766.5,761C905.952,761,1019,647.952,1019,508.5S905.952,256,766.5,256,514,369.048,514,508.5,627.048,761,766.5,761Zm.5-129A123,123,0,1,0,644,509,123,123,0,0,0,767,632Z" fill-rule="evenodd" fill="url(#radial-gradient)"/>
+  </g>
+</svg>
