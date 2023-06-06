@@ -4,15 +4,14 @@
 /* FONTS */
 /*********/
 @font-face {
-	font-family: "Avant garde";
-	src: url("../fonts/itc_avant_garde_gothic_std_medium-webfont.woff2")
-		format("woff2"),
-	  url("../fonts/itc_avant_garde_gothic_std_medium-webfont.woff")
-		format("woff");
-	font-weight: normal;
-	font-style: normal;
-  }
-  
+  font-family: "Avant garde";
+  src: url("../fonts/itc_avant_garde_gothic_std_medium-webfont.woff2")
+      format("woff2"),
+    url("../fonts/itc_avant_garde_gothic_std_medium-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /**************/
 /* CSS REMEDY */
@@ -38,7 +37,7 @@ summary {
   --color-border: #2b2b2b;
   --dropshadow:0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
+ 
 /****************/
 /* JOUW STYLING */
 /****************/
@@ -46,12 +45,15 @@ body {
   font-family: "avant garde", sans-serif;
   color: var(--color-text);
   background-color: var(--color-background);
+height: 100%;
+overflow: hidden;
 }
 
 /* jouw code */
 
 img {
-	box-shadow: var(--dropshadow);
+ filter: drop-shadow( 0px 4px 4px rgba(0, 0, 0, 0.25));
+  
 }
 
 body section:first-child {
@@ -61,35 +63,56 @@ body section:first-child {
   align-items: center;
   position: absolute;
   width: 100vw;
-  height:60vw;
+  height: 60vw;
   left: 0px;
   top: 0px;
+
 
   border-bottom: 4px solid var(--color-border);
 }
 
-body section:first-child section div {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
+body section:first-child section:first-of-type div:first-of-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-body section:first-child section h1 {
-	font-size: 1.2em;
+body section:first-child section:first-of-type h1 {
+  font-size: 1.2em;
 }
 
-body section:first-child section h2 {
-	font-size: 1em;
-	
-	position: relative;
-	bottom:2vw;
+body section:first-child section:first-of-type h2 {
+  font-size: 1em;
+
+  position: relative;
+  bottom: 2vw;
 }
 
-  body section:first-child section div img:nth-of-type(2) {
+body section:first-child section:first-of-type div:first-of-type img:nth-of-type(2) {
   position: relative;
   z-index: 1;
   right: 46%;
   bottom: 5vw;
-  
+}
+
+body section:nth-child(2) {
+	overflow: hidden;
+	margin: -10px;
+
+}
+
+body section:nth-child(2) div:nth-of-type(3) {
+	position: relative;
+	top: 30vw;
+	left:10vw;
+}
+
+
+body section:nth-child(2) div:nth-of-type(3) img:nth-of-type(2) {
+	position: relative;
+	bottom: 99vw;
+	left:33vw;
+	z-index: -1;
+	width: 65%;
 }
