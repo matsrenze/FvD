@@ -54,19 +54,72 @@ body {
   display: grid;
   grid-template-rows: max-content max-content 1fr;
   overflow: hidden;
+  font-weight: 800;
 }
 
 /* jouw code */
 
+/* header | Hamburger Menu */
+
 body section:nth-of-type(1) {
-    height: 14em;
-    background-color: var(--color-background);
-    border-bottom: 5px solid var(--color-border);
-    grid-column-start: 1;
-    grid-row-start: 1;
-    /* visibility: hidden; */
-    position: relative;
-    z-index: 2;
+  height: 17em;
+  background-color: var(--color-background);
+  border-bottom: 5px solid var(--color-border);
+  grid-column-start: 1;
+  grid-row-start: 1;
+  position: relative;
+  z-index: 2;
+
+
+  transform: translateY(-300px);
+  overflow: hidden;
+  transition: 1s cubic-bezier(0, 0, 0.2, 1);
+}
+
+body section:nth-of-type(1) h1 {
+  margin: 5% 5% 0%;
+}
+
+body section:nth-of-type(1) div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body section:nth-of-type(1) ul {
+  width: 95%;
+  height: fit-content;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+body section:nth-of-type(1) ul li {
+  margin: 0px 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+
+  scroll-snap-align: center;
+}
+
+body section:nth-of-type(1) ul li img {
+  width: 8em;
+}
+
+body section:nth-of-type(1) ul li p {
+  font-size: 16px;
+  margin: 5px;
+}
+
+body section:nth-of-type(1) ul li p:nth-of-type(2) {
+  font-size: 14px;
+  margin: 5px;
 }
 
 /* Container | Song Overview */
@@ -88,6 +141,14 @@ section:nth-of-type(2) > img:first-of-type {
   width: 38%;
 }
 
+section:nth-of-type(2) > img:nth-of-type(2) {
+  order:4;
+  align-self:flex-start;
+  margin: 5% 0% 0% -8%;
+  width: 2.5em;
+
+}
+
 section:nth-of-type(2) div:nth-of-type(1) {
   height: 10em;
   display: flex;
@@ -101,7 +162,7 @@ section:nth-of-type(2) div:nth-of-type(1) h1 {
 }
 
 section:nth-of-type(2) div:nth-of-type(1) h2 {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   font-size: 18px;
 }
 
@@ -174,7 +235,8 @@ section:nth-of-type(4) img:nth-of-type(2) {
   }
 
   section:nth-of-type(1) {
-    display: block;
+    inherits: none;
+    transform: translateY(300px);
     height: 12em;
     background-color: #111;
     grid-area: 1/1/2/2;
@@ -186,8 +248,21 @@ section:nth-of-type(4) img:nth-of-type(2) {
 
   section:nth-of-type(3) {
     grid-area: 3/1/4/2;
-    height: 1fr;
+    height: 18em;
   }
+
+  section:nth-of-type(3) div:nth-of-type(1) img:nth-of-type(1) {
+    height: 16vw;
+    top: 0;
+  }
+
+  section:nth-of-type(3) div:nth-of-type(1) img:nth-of-type(2) {
+    width: 3em;
+    left: -2.1em;
+    top: 0;
+  }
+
+  /* Vinyl | Positioning & Sizing */
 
   section:nth-of-type(4) {
     grid-area: 1/4/4/3;
@@ -198,7 +273,7 @@ section:nth-of-type(4) img:nth-of-type(2) {
     width: 70vmax;
     position: relative;
     left: 32vmax;
-    top:2vmax;
+    top: 2vmax;
   }
 
   section:nth-of-type(4) img:nth-of-type(2) {
