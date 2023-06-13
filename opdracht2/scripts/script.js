@@ -1,5 +1,7 @@
 // JavaScript Document
 
+// Repository van Alle Muziekjes en de bijpassende attributen.
+
 const songs = [
   {
     coverImage: "./images/prayer-cover.jpg",
@@ -37,6 +39,7 @@ const ul = document.querySelector("section div ul");
 const playpauseButton = document.querySelector(
   "section:nth-of-type(3) div img:nth-of-type(2)"
 );
+const VinylRotate = document.querySelector("section:nth-of-type(4) img:nth-of-type(2)");
 let currentAudio = null;
 let speeltAf = false;
 
@@ -69,6 +72,7 @@ songs.forEach((song) => {
     console.log("playing muzic");
     playpauseButton.src = "./images/pauseKnop.svg";
     speeltAf = true;
+    VinylRotate.classList.add("playing");
   });
 });
 
@@ -80,10 +84,32 @@ playpauseButton.addEventListener("click", () => {
       currentAudio.pause();
       speeltAf = false;
       playpauseButton.src = "./images/play.svg";
+      VinylRotate.classList.remove("playing");
     } else {
       currentAudio.play();
       speeltAf = true;
       playpauseButton.src = "./images/pauseKnop.svg";
+      VinylRotate.classList.add("playing");
     }
   }
 });
+
+// Hamburger Menu
+
+const BurgerButton = document.querySelector(
+  "section:nth-of-type(2) > img:nth-of-type(2)"
+);
+const BurgerOpen = document.querySelector("section:nth-of-type(1)");
+const BurgerCloseButton = document.querySelector("section:nth-of-type(1) div:nth-of-type(1) img");
+
+BurgerButton.addEventListener("click", () => {
+  BurgerOpen.classList.add("MenuOpen");
+  console.log("Open");
+});
+
+BurgerCloseButton.addEventListener("click", () => {
+    BurgerOpen.classList.remove("MenuOpen");
+    console.log("close");
+  });
+
+
