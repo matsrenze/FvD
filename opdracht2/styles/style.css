@@ -178,7 +178,7 @@ section:nth-of-type(3) {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 13em;
+  height: 7em;
   grid-column-start: 1;
   grid-row-start: 2;
 }
@@ -252,13 +252,13 @@ section:nth-of-type(4) img:nth-of-type(2) {
   }
 
   section:nth-of-type(3) div:nth-of-type(1) img:nth-of-type(1) {
-    height: 16vw;
+    height: 13em;
     top: 0;
   }
 
   section:nth-of-type(3) div:nth-of-type(1) img:nth-of-type(2) {
     width: 3em;
-    left: -2.1em;
+    left: -2.15em;
     top: 0;
   }
 
