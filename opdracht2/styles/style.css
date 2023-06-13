@@ -145,12 +145,13 @@ section:nth-of-type(2) {
 section:nth-of-type(2) > img:first-of-type {
   margin-right: 1.5em;
   width: 38%;
+  border-radius: 5px;
 }
 
 section:nth-of-type(2) > img:nth-of-type(2) {
   order:4;
   align-self:flex-start;
-  margin: 4% 0% 0% -8%;
+  margin: 4% 0% 0% -10%;
   width: 2.5em;
 
 }
@@ -176,7 +177,7 @@ section:nth-of-type(2) div:nth-of-type(1) input {
   appearance: none;
   position: relative;
   z-index: 1;
-  width: 14em;
+  width: 13em;
   height: 0.8em;
   background-color: var(--color-border);
   border-radius: 5px;

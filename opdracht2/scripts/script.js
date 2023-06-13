@@ -39,18 +39,29 @@ const ul = document.querySelector("section div ul");
 const playpauseButton = document.querySelector(
   "section:nth-of-type(3) div img:nth-of-type(2)"
 );
-const VinylRotate = document.querySelector("section:nth-of-type(4) img:nth-of-type(2)");
+const VinylRotate = document.querySelector(
+  "section:nth-of-type(4) img:nth-of-type(2)"
+);
+
+const CurrentSongImage = document.querySelector(
+  "section:nth-of-type(2) > img:first-of-type"
+);
+
+const CurrentSongImageVinyl = document.querySelector(
+  "section:nth-of-type(4) img:nth-of-type(2)"
+);
+
 let currentAudio = null;
 let speeltAf = false;
 
-songs.forEach((song) => {
+songs.forEach((song, index) => {
   const li = document.createElement("li");
   const img = document.createElement("img");
   const songName = document.createElement("p");
   const artistName = document.createElement("p");
 
   img.src = song.coverImage;
-  img.alt = "Cover Image";
+  img.alt = "Current Song Cover";
 
   songName.textContent = song.songName;
   artistName.textContent = song.artistName;
@@ -65,6 +76,9 @@ songs.forEach((song) => {
     if (currentAudio) {
       currentAudio.pause();
     }
+
+    CurrentSongImage.src = song.coverImage;
+    CurrentSongImageVinyl.src = song.coverImage;
 
     const audio = new Audio(song.MusicContent);
     audio.play();
@@ -100,7 +114,9 @@ const BurgerButton = document.querySelector(
   "section:nth-of-type(2) > img:nth-of-type(2)"
 );
 const BurgerOpen = document.querySelector("section:nth-of-type(1)");
-const BurgerCloseButton = document.querySelector("section:nth-of-type(1) div:nth-of-type(1) img");
+const BurgerCloseButton = document.querySelector(
+  "section:nth-of-type(1) div:nth-of-type(1) img"
+);
 
 BurgerButton.addEventListener("click", () => {
   BurgerOpen.classList.add("MenuOpen");
@@ -108,8 +124,6 @@ BurgerButton.addEventListener("click", () => {
 });
 
 BurgerCloseButton.addEventListener("click", () => {
-    BurgerOpen.classList.remove("MenuOpen");
-    console.log("close");
-  });
-
-
+  BurgerOpen.classList.remove("MenuOpen");
+  console.log("close");
+});
