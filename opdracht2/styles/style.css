@@ -110,16 +110,17 @@ body section:nth-of-type(1) ul li {
 
 body section:nth-of-type(1) ul li img {
   width: 8em;
+  border-radius: 5px;
 }
 
 body section:nth-of-type(1) ul li p {
   font-size: 16px;
-  margin: 5px;
+  margin: 8px 0 0 0 ;
 }
 
 body section:nth-of-type(1) ul li p:nth-of-type(2) {
   font-size: 14px;
-  margin: 5px;
+  margin: 5px 0 0 0;
 }
 
 /* Container | Song Overview */
@@ -174,6 +175,7 @@ section:nth-of-type(2) div:nth-of-type(1) input {
   height: 0.8em;
   background-color: var(--color-border);
   border-radius: 5px;
+  cursor: grab;
 }
 
 section:nth-of-type(2) div:nth-of-type(1) input::-webkit-slider-thumb {
@@ -182,6 +184,7 @@ section:nth-of-type(2) div:nth-of-type(1) input::-webkit-slider-thumb {
   width: 1em;
   height: 2.5em;
   border-radius: 5px;
+  cursor: grabbing;
 }
 
 
