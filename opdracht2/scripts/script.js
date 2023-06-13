@@ -10,10 +10,10 @@ const songs = [
     MusicContent: "./sounds/Dawn.mp3",
   },
   {
-    coverImage: "./images/cover-placeholder.svg",
-    songName: "Song 2",
-    artistName: "Artist 2",
-    MusicContent: "./sounds/Dawn.mp3",
+    coverImage: "./images/taykcover.jpg",
+    songName: "Gotta Blast",
+    artistName: "Tay-K",
+    MusicContent: "./sounds/gottablast.mp3",
   },
   {
     coverImage: "./images/cover-placeholder.svg",
@@ -83,7 +83,7 @@ songs.forEach((song, index) => {
     CurrentSongImageVinyl.src = song.coverImage;
     playpauseButton.src = "./images/pauseKnop.svg";
 
-    
+
     const audio = new Audio(song.MusicContent);
     audio.play();
     currentAudio = audio;
