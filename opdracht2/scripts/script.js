@@ -77,14 +77,18 @@ songs.forEach((song, index) => {
       currentAudio.pause();
     }
 
+
+    // Replacing image in accordance with a song | Feedback
     CurrentSongImage.src = song.coverImage;
     CurrentSongImageVinyl.src = song.coverImage;
+    playpauseButton.src = "./images/pauseKnop.svg";
 
+    
     const audio = new Audio(song.MusicContent);
     audio.play();
     currentAudio = audio;
     console.log("playing muzic");
-    playpauseButton.src = "./images/pauseKnop.svg";
+
     speeltAf = true;
     VinylRotate.classList.add("playing");
   });
