@@ -248,9 +248,9 @@ section:nth-of-type(4) img:nth-of-type(2) {
     border-right: 5px solid var(--color-border);
   }
 
-  section:nth-of-type(1)  {
+  body section:nth-of-type(1)  {
    
-    top:0 !important;
+    top:0;
     grid-area: 1/1/2/2;
   }
  
@@ -302,8 +302,8 @@ section:nth-of-type(4) img:nth-of-type(2) {
 
 /* Javaschript Classes | Hamburger Menu */
 
-.MenuOpen {
-  top:0 !important;
+body section:nth-of-type(1).MenuOpen {
+  top:0;
 }
 
 /* Javaschript Classes | Vinyl Rotation */
