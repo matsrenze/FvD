@@ -8,37 +8,62 @@ const songs = [
     songName: "Dawn",
     artistName: "Akira Ashikawa",
     MusicContent: "./sounds/Dawn.mp3",
+    duration: 313,
+    trackValue:1,
   },
   {
     coverImage: "./images/taykcover.jpg",
     songName: "Gotta Blast",
     artistName: "Tay-K",
     MusicContent: "./sounds/gottablast.mp3",
+    duration: 131,
+    trackValue:2,
   },
   {
     coverImage: "./images/cover-placeholder.svg",
     songName: "Song 3",
     artistName: "Artist 3",
     MusicContent: "./sounds/Dawn.mp3",
+    duration: 313,
+    trackValue:3,
   },
   {
     coverImage: "./images/cover-placeholder.svg",
     songName: "Song 4",
     artistName: "Artist 4",
     MusicContent: "./sounds/Dawn.mp3",
+    duration: 313,
+    trackValue:4,
   },
   {
     coverImage: "./images/cover-placeholder.svg",
     songName: "Song 5",
     artistName: "Artist 5",
     MusicContent: "./sounds/Dawn.mp3",
+    duration: 313,
+    trackValue:5,
   },
 ];
 
 const ul = document.querySelector("section div ul");
+
 const playpauseButton = document.querySelector(
   "section:nth-of-type(3) div img:nth-of-type(2)"
 );
+
+const skipForwardButton = document.querySelector(
+  "section:nth-of-type(3) div img:nth-of-type(3)"
+);
+const skipBackwardButton = document.querySelector(
+  "section:nth-of-type(3) div img:nth-of-type(1)"
+);
+
+const playSong = (song) => {
+  if (currentAudio) {
+    currentAudio.pause();
+  }
+};
+
 const VinylRotate = document.querySelector(
   "section:nth-of-type(4) img:nth-of-type(2)"
 );
@@ -51,10 +76,14 @@ const CurrentSongImageVinyl = document.querySelector(
   "section:nth-of-type(4) img:nth-of-type(2)"
 );
 
+const CurrentSongTitle = document.querySelector("section:nth-of-type(2) h1");
+const CurrentSongArtist = document.querySelector("section:nth-of-type(2) h2");
+
 let currentAudio = null;
 let speeltAf = false;
+let currentTrackValue = 0;
 
-songs.forEach((song, index) => {
+songs.forEach((song) => {
   const li = document.createElement("li");
   const img = document.createElement("img");
   const songName = document.createElement("p");
@@ -72,29 +101,68 @@ songs.forEach((song, index) => {
 
   ul.appendChild(li);
 
+  // When an image in the Your Tracks menu is clicked the following function is activated, and the
+  // Corresponding song starts playing.
+ 
   img.addEventListener("click", () => {
-    if (currentAudio) {
-      currentAudio.pause();
-    }
-
+   
+    playSong(song);
+    console.log(song.trackValue);
+  
+    currentTrackValue = song.trackValue;
 
     // Replacing image in accordance with a song | Feedback
     CurrentSongImage.src = song.coverImage;
     CurrentSongImageVinyl.src = song.coverImage;
     playpauseButton.src = "./images/pauseKnop.svg";
 
+    // Replaces Text content in accordance with the currently playing track
+
+    CurrentSongTitle.textContent = song.songName;
+    CurrentSongArtist.textContent = song.artistName;
 
     const audio = new Audio(song.MusicContent);
     audio.play();
     currentAudio = audio;
-    console.log("playing muzic");
+    console.log("playing music");
 
     speeltAf = true;
     VinylRotate.classList.add("playing");
+
+    // This code is responsible for moving the slider in accordance with the progress of the current track.
+
+    const musicSlider = document.querySelector("input");
+    musicSlider.value = 0;
+    musicSlider.max = song.duration;
+
+    // Adds an eventlistener to the slider that links the progress of the song to the value of the slider input.
+    // This gives the user the ability to skip the progress of the track to a desired point.
+
+    musicSlider.addEventListener("input", () => {
+      audio.currentTime = musicSlider.value;
+    });
+
+    //Increases the slider value in accordance with the progress of the song in seconds.
+
+    const updateSlider = () => {
+      musicSlider.value = audio.currentTime;
+    };
+
+    // This eventlistener activates UpdateSlider everytime the the songs progresses a second.
+    audio.addEventListener("timeupdate", updateSlider);
+
+    //Removes previous eventlistener when the song has ended.
+    audio.addEventListener("ended", () => {
+      audio.removeEventListener("timeupdate", updateSlider);
+    });
+    // Code For the play/pause Button
+
+    
   });
+  
 });
 
-// Code For the play/pause Button
+// // Code For the play/pause Button
 
 playpauseButton.addEventListener("click", () => {
   if (currentAudio) {
@@ -103,14 +171,43 @@ playpauseButton.addEventListener("click", () => {
       speeltAf = false;
       playpauseButton.src = "./images/play.svg";
       VinylRotate.classList.remove("playing");
+      console.log("Pause");
     } else {
       currentAudio.play();
       speeltAf = true;
       playpauseButton.src = "./images/pauseKnop.svg";
       VinylRotate.classList.add("playing");
+      console.log("Play");
     }
   }
 });
+
+
+// const getNextSong = () => {
+//   const nextSong = songs.find((song) => song.trackValue === currentTrackValue + 1);
+//   return nextSong || songs[0]; // If no next song is found, return the first song in the array
+// };
+
+// // Function to get the previous song based on track value
+// const getPreviousSong = () => {
+//   const previousSong = songs.find((song) => song.trackValue === currentTrackValue - 1);
+//   return previousSong || songs[songs.length - 1]; // If no previous song is found, return the last song in the array
+// };
+
+// // Function to skip to the next song
+// const skipForward = () => {
+//   const nextSong = getNextSong();
+//   playSong(nextSong);
+//   console.log("forward");
+// };
+
+// // Function to skip to the previous song
+// const skipBackward = () => {
+//   const previousSong = getPreviousSong();
+//   playSong(previousSong);
+//   console.log("backward");
+// };
+
 
 // Hamburger Menu
 
