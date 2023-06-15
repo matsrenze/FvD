@@ -31,7 +31,7 @@ const songs = [
     coverImage: "./images/kimba.jpg",
     songName: "Having Fun",
     artistName: "Kimba Unit",
-    MusicContent: "./sounds/Dawn.mp3",
+    MusicContent: "./sounds/HavingFun.mp3",
     duration: 330,
     trackValue: 3,
   },
