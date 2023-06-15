@@ -38,11 +38,39 @@ summary {
   --dropshadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+/* h1 INVISIBLE */
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 /****************/
 /* JOUW STYLING */
 /****************/
 img {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* h1 INVISIBLE */
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+button {
+  border: none;
 }
 
 body {
@@ -152,11 +180,11 @@ section:nth-of-type(2) > img:first-of-type {
   border-radius: 5px;
 }
 
-section:nth-of-type(2) > img:nth-of-type(2) {
+section:nth-of-type(2) button {
   order: 4;
   align-self: flex-start;
-  margin: 4% 0% 0% -6%;
-  width: 2.5em;
+  margin: 3% 0% 0% -12%;
+  width: 3.5em;
 }
 
 section:nth-of-type(2) div:nth-of-type(1) {
@@ -166,14 +194,14 @@ section:nth-of-type(2) div:nth-of-type(1) {
   align-items: start;
 }
 
-section:nth-of-type(2) div:nth-of-type(1) h1 {
-  margin-bottom: 0;
-  font-size: 22px;
+section:nth-of-type(2) div:nth-of-type(1) h2 {
+  margin-bottom: -0.3em;
+  font-size: 24px;
 }
 
-section:nth-of-type(2) div:nth-of-type(1) h2 {
-  margin-bottom: 1.5em;
-  font-size: 18px;
+section:nth-of-type(2) div:nth-of-type(1) h3 {
+  margin-bottom: 1.2em;
+  font-size: 20px;
 }
 
 section:nth-of-type(2) div:nth-of-type(1) input {

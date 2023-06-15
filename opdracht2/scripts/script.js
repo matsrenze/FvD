@@ -92,8 +92,8 @@ const CurrentSongImageVinyl = document.querySelector(
   "section:nth-of-type(4) img:nth-of-type(2)"
 );
 
-const CurrentSongTitle = document.querySelector("section:nth-of-type(2) h1");
-const CurrentSongArtist = document.querySelector("section:nth-of-type(2) h2");
+const CurrentSongTitle = document.querySelector("section:nth-of-type(2) h2");
+const CurrentSongArtist = document.querySelector("section:nth-of-type(2) h3");
 
 let currentAudio = null;
 let speeltAf = false;
@@ -237,11 +237,11 @@ skipBackwardButton.addEventListener("click", goToPrevSong);
 // Hamburger Menu
 
 const BurgerButton = document.querySelector(
-  "section:nth-of-type(2) > img:nth-of-type(2)"
+  "section:nth-of-type(2) > button"
 );
 const BurgerOpen = document.querySelector("section:nth-of-type(1)");
 const BurgerCloseButton = document.querySelector(
-  "section:nth-of-type(1) div:nth-of-type(1) img"
+  "section:nth-of-type(1) div:nth-of-type(1) button"
 );
 
 BurgerButton.addEventListener("click", () => {
@@ -262,8 +262,7 @@ const handleVoiceRecognition = () => {
 
   // Configure recognition options
   recognition.lang = "en-US";
-  recognition.interimResults = true;
-
+  
   // Start recognition
   recognition.start();
 
@@ -299,6 +298,16 @@ const handleVoiceRecognition = () => {
         VinylRotate.classList.add("playing");
       }, 1100);
     }
+
+    if (transcript.includes("pause")) {
+      playPause();
+    }
+
+    if (transcript.includes("play")) {
+      playPause();
+    }
+
+    handleVoiceRecognition();
   };
 
   // Event handler for voice recognition errors
