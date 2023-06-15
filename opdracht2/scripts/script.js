@@ -205,7 +205,7 @@ const goToSong = (song) => {
     goToNextSong();
   });
 
-  handleVoiceRecognition();
+  
 };
 
 const goToNextSong = () => {
@@ -337,7 +337,10 @@ const handleVoiceRecognition = () => {
       playPause();
     }
 
+    handleVoiceRecognition();
   };
+
+
 
   // Event handler for voice recognition errors
   recognition.onerror = (event) => {
