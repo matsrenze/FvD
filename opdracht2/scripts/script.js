@@ -146,12 +146,13 @@ const playPause = () => {
       console.log("Play");
     }
   }
+
+  handleVoiceRecognition();
 };
 
 playpauseButton.addEventListener("click", playPause);
 
 const goToSong = (song) => {
-  handleVoiceRecognition();
   currentTrackValue = song.trackValue;
   playSong(song);
   console.log(song.trackValue);
@@ -203,6 +204,8 @@ const goToSong = (song) => {
     audio.removeEventListener("timeupdate", updateSlider);
     goToNextSong();
   });
+
+  handleVoiceRecognition();
 };
 
 const goToNextSong = () => {
@@ -262,7 +265,7 @@ const handleVoiceRecognition = () => {
 
   // Configure recognition options
   recognition.lang = "en-US";
-  
+
   // Start recognition
   recognition.start();
 
@@ -307,7 +310,6 @@ const handleVoiceRecognition = () => {
       playPause();
     }
 
-    handleVoiceRecognition();
   };
 
   // Event handler for voice recognition errors

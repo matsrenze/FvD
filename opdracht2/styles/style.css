@@ -38,6 +38,23 @@ summary {
   --dropshadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #e4e4e4;
+    --color-background: #4e4848;
+  }
+
+  img {
+    filter: drop-shadow(0px 0px 8px #e4e4e4 ) ;
+  }
+
+  h1, h2, h3 {
+    font-weight: 600;
+    font-kerning: 1em;
+  }
+}
+
+
 /* h1 INVISIBLE */
 
 .visually-hidden {
@@ -53,7 +70,11 @@ summary {
 /****************/
 /* JOUW STYLING */
 /****************/
-img {
+html {
+  overflow: hidden;
+}
+
+body > img {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -71,6 +92,7 @@ img {
 
 button {
   border: none;
+  background: none;
 }
 
 body {
@@ -119,8 +141,8 @@ body section:nth-of-type(1) div:nth-of-type(2) {
 
 body section:nth-of-type(1) ul {
   width: 95%;
-  height: fit-content;
-  overflow: auto;
+  height: 12em;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   display: flex;
   flex-direction: row;
@@ -256,7 +278,6 @@ section:nth-of-type(4) {
   justify-self: end;
   align-self: end;
 
-  overflow: hidden;
 }
 
 section:nth-of-type(4) img:nth-of-type(2) {
@@ -357,6 +378,5 @@ section:nth-of-type(4) img:nth-of-type(2) {
   }
 }
 
-/* Javaschript Classes */
 
 
