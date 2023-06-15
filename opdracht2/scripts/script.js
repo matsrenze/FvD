@@ -130,7 +130,7 @@ songs.forEach((song) => {
 
 // // Code For the play/pause Button
 
-playpauseButton.addEventListener("click", () => {
+const playPause = () => {
   if (currentAudio) {
     if (speeltAf) {
       currentAudio.pause();
@@ -146,9 +146,12 @@ playpauseButton.addEventListener("click", () => {
       console.log("Play");
     }
   }
-});
+};
+
+playpauseButton.addEventListener("click", playPause);
 
 const goToSong = (song) => {
+  handleVoiceRecognition();
   currentTrackValue = song.trackValue;
   playSong(song);
   console.log(song.trackValue);
@@ -231,39 +234,6 @@ const goToPrevSong = () => {
 skipForwardButton.addEventListener("click", goToNextSong);
 skipBackwardButton.addEventListener("click", goToPrevSong);
 
-const audio = new Audio(songs.MusicContent);
-
-const RemoveImg = document.querySelector("section:nth-of-type(2) img");
-const EmptyState = () => {
-  if ((currentAudio = 0)) {
-  }
-};
-
-// const getNextSong = () => {
-//   const nextSong = songs.find((song) => song.trackValue === currentTrackValue + 1);
-//   return nextSong || songs[0]; // If no next song is found, return the first song in the array
-// };
-
-// // Function to get the previous song based on track value
-// const getPreviousSong = () => {
-//   const previousSong = songs.find((song) => song.trackValue === currentTrackValue - 1);
-//   return previousSong || songs[songs.length - 1]; // If no previous song is found, return the last song in the array
-// };
-
-// // Function to skip to the next song
-// const skipForward = () => {
-//   const nextSong = getNextSong();
-//   playSong(nextSong);
-//   console.log("forward");
-// };
-
-// // Function to skip to the previous song
-// const skipBackward = () => {
-//   const previousSong = getPreviousSong();
-//   playSong(previousSong);
-//   console.log("backward");
-// };
-
 // Hamburger Menu
 
 const BurgerButton = document.querySelector(
@@ -283,3 +253,58 @@ BurgerCloseButton.addEventListener("click", () => {
   BurgerOpen.classList.remove("MenuOpen");
   console.log("close");
 });
+
+// Voice Recognition
+
+const handleVoiceRecognition = () => {
+  const recognition = new (window.SpeechRecognition ||
+    window.webkitSpeechRecognition)();
+
+  // Configure recognition options
+  recognition.lang = "en-US";
+  recognition.interimResults = true;
+
+  // Start recognition
+  recognition.start();
+
+  console.log("Listening");
+
+  // Event handler for voice recognition results
+  recognition.onresult = (event) => {
+    const transcript =
+      event.results[event.results.length - 1][0].transcript.toLowerCase();
+    console.log("Recognized speech:", transcript);
+
+    // Check if the recognized speech matches the command "boring"
+    if (transcript.includes("skip")) {
+      goToNextSong();
+    }
+    if (transcript.includes("boring")) {
+      goToNextSong();
+    }
+
+    if (transcript.includes("back")) {
+      goToPrevSong();
+    }
+
+    if (transcript.includes("scratch")) {
+      const scratchFX = new Audio("./sounds/recordScratch.mp3");
+      scratchFX.play();
+
+      VinylRotate.classList.remove("playing");
+      VinylRotate.classList.add("scratch");
+      setTimeout(() => {
+        goToNextSong();
+        VinylRotate.classList.remove("scratch");
+        VinylRotate.classList.add("playing");
+      }, 1100);
+    }
+  };
+
+  // Event handler for voice recognition errors
+  recognition.onerror = (event) => {
+    console.error("Voice recognition error:", event.error);
+  };
+};
+
+handleVoiceRecognition();

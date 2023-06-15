@@ -70,12 +70,10 @@ body section:nth-of-type(1) {
   position: relative;
   z-index: 2;
 
-
-  top:-100vw;
+  top: -100vw;
   overflow: hidden;
-  transition: 1s cubic-bezier(0, 0, 0.2, 1);
+  transition: 0.5s linear;
 }
-
 
 body section:nth-of-type(1) div:nth-of-type(1) {
   display: flex;
@@ -120,12 +118,18 @@ body section:nth-of-type(1) ul li img {
 
 body section:nth-of-type(1) ul li p {
   font-size: 16px;
-  margin: 8px 0 0 0 ;
+  margin: 8px 0 0 0;
 }
 
 body section:nth-of-type(1) ul li p:nth-of-type(2) {
   font-size: 14px;
   margin: 5px 0 0 0;
+}
+
+/* Javaschript Classes | Hamburger Menu */
+
+body section:nth-of-type(1).MenuOpen {
+  top: 0;
 }
 
 /* Container | Song Overview */
@@ -149,11 +153,10 @@ section:nth-of-type(2) > img:first-of-type {
 }
 
 section:nth-of-type(2) > img:nth-of-type(2) {
-  order:4;
-  align-self:flex-start;
+  order: 4;
+  align-self: flex-start;
   margin: 4% 0% 0% -6%;
   width: 2.5em;
-
 }
 
 section:nth-of-type(2) div:nth-of-type(1) {
@@ -186,13 +189,12 @@ section:nth-of-type(2) div:nth-of-type(1) input {
 
 section:nth-of-type(2) div:nth-of-type(1) input::-webkit-slider-thumb {
   appearance: none;
-  background-color: #635C5C;
+  background-color: #635c5c;
   width: 1em;
   height: 2.5em;
   border-radius: 5px;
   cursor: grabbing;
 }
-
 
 /* Container | Controls */
 
@@ -205,7 +207,6 @@ section:nth-of-type(3) {
   grid-row-start: 2;
 }
 
-
 section:nth-of-type(3) div:nth-of-type(1) {
   display: flex;
   justify-content: space-between;
@@ -216,7 +217,7 @@ section:nth-of-type(3) div:nth-of-type(1) img {
   width: 4em;
 }
 
-/* Container | Current Track */
+/* Container | Current Track | Vinyl */
 
 section:nth-of-type(4) {
   height: 50vh;
@@ -238,7 +239,41 @@ section:nth-of-type(4) img:nth-of-type(2) {
   right: -8em;
 }
 
-@media (min-width: 400px) {
+
+/* Javascript Classes | Vinyl Rotation */
+
+.playing {
+  animation: rotate 8s linear infinite;
+}
+
+.scratch {
+  animation: scratch 1s ease-in-out;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes scratch {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  80% {
+    transform: rotateZ(420deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+
+@media (min-width: 450px) {
   body {
     grid-template-columns: 24em 1fr;
     height: 100vmax;
@@ -246,14 +281,14 @@ section:nth-of-type(4) img:nth-of-type(2) {
 
   section:nth-of-type(-n + 3) {
     border-right: 5px solid var(--color-border);
+    border-bottom: 5px solid var(--color-border) ;
   }
 
-  body section:nth-of-type(1)  {
-   
-    top:0;
+  body section:nth-of-type(1) {
+    top: 0;
     grid-area: 1/1/2/2;
   }
- 
+
   section:nth-of-type(1) div:nth-of-type(1) img {
     display: none;
   }
@@ -270,7 +305,6 @@ section:nth-of-type(4) img:nth-of-type(2) {
     grid-area: 3/1/4/2;
     height: 18em;
   }
-
 
   /* Vinyl | Positioning & Sizing */
 
@@ -295,29 +329,6 @@ section:nth-of-type(4) img:nth-of-type(2) {
   }
 }
 
-
-
 /* Javaschript Classes */
 
 
-/* Javaschript Classes | Hamburger Menu */
-
-body section:nth-of-type(1).MenuOpen {
-  top:0;
-}
-
-/* Javaschript Classes | Vinyl Rotation */
-
-
-.playing {
-  animation: rotate 8s linear infinite;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
