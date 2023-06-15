@@ -237,6 +237,33 @@ const goToPrevSong = () => {
 skipForwardButton.addEventListener("click", goToNextSong);
 skipBackwardButton.addEventListener("click", goToPrevSong);
 
+
+// Keyboard controls
+
+
+// Keyboard controls | Skip song Arrowkey Right
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowRight") {
+    goToNextSong();
+  }
+});
+
+
+// Keyboard controls | previous song Arrowkey Left
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") {
+    goToPrevSong();
+  }
+});
+
+// Keyboard controls | previous song Arrowkey Left
+document.addEventListener("keydown", (event) => {
+  if (event.key === " ") {
+    playPause();
+  }
+});
+
+
 // Hamburger Menu
 
 const BurgerButton = document.querySelector(
