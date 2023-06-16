@@ -146,8 +146,6 @@ const playPause = () => {
       console.log("Play");
     }
   }
-
-  handleVoiceRecognition();
 };
 
 playpauseButton.addEventListener("click", playPause);
