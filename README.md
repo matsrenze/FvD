@@ -49,7 +49,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <div style="display:flex; justift-content:space-between; box-shadow: 2px 2px 4px #ffffff;">
+  <div style="display:flex; justify-content:space-between; box-shadow: 2px 2px 4px #ffffff;">
   <img src="readme-images/SS-FvD-LightMode.png" width="375px" alt="uitomst opdracht 1">
  <img src="readme-images/SS-Fvd-DarkMode.png" width="375px" alt="uitomst opdracht 1">
   </div>
