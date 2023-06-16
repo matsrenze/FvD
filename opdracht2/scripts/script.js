@@ -64,14 +64,14 @@ const songs = [
 const ul = document.querySelector("section div ul");
 
 const playpauseButton = document.querySelector(
-  "section:nth-of-type(3) div img:nth-of-type(2)"
+  "section:nth-of-type(3) div button:nth-of-type(2) img"
 );
 
 const skipForwardButton = document.querySelector(
-  "section:nth-of-type(3) div img:nth-of-type(3)"
+  "section:nth-of-type(3) div button:nth-of-type(3) img"
 );
 const skipBackwardButton = document.querySelector(
-  "section:nth-of-type(3) div img:nth-of-type(1)"
+  "section:nth-of-type(3) div button:nth-of-type(1) img"
 );
 
 const playSong = (song) => {
