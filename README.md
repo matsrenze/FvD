@@ -106,22 +106,19 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
-Respoonsivess op grotere Iphones (12 pro max >) laat de laptop layout zien ook als het scherm rechtop staat.
+
+Responsivess op grotere Iphones (12 pro max >) laat de laptop layout zien ook als het scherm rechtop staat.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
-Ik heb het minimum brak point verhoogd van 400 naar 450. 
+Ik heb het minimum break point verhoogd van 400px naar 450px. 
 
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
   Voice commands zorgde voor veel crashes en performance issues op IOS devices. 
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
   Ik heb de functie van de Voice Control functionaliteit nu in een keydown functie gezet. Deze functionaliteit is nu dus alleen beschikbaar op desktop 
   devices. De gebruiker moet nu op de enter knop drukken om Voice control (tijdelijk) aan te zetten. Ik heb er ook voor gekozen om het tijdelijke aspect te
@@ -133,6 +130,27 @@ Ik heb het minimum brak point verhoogd van 400 naar 450.
 Het werkent maken van de skip forward and skip backward buttons.
 
   #### oplossing:
+
+  Ik heb alle tracks in de array een specifieke waarde gegeven op basis van de numerieke volgorde waarin zij staan. 
+
+Met gebruik van if else statements wordt er met javascript gekeken naar de waarde van de huidige track en op basis van user input wordt er dan +1 toegevoegd aan de track value. Dit gebeurd als de gebruiker op de skipForward button drukt. Deze hogere waarde staat dan gelijk aan de volgende track en deze wordt dan afgespeeld. Hetzelfde principe werkt ook voor de skipBackward, maar inplaats van + 1 doen we - 1.
+
+ ### Bevinding 4:
+
+ Display:grid voor responsiveness gebruiken.
+
+  #### oplossing:
+
+Ik had veel moeite met het overzetten van de layout naar de desktop versie van het ontwerp, ik gebruikte eerst eigenlijk alleen maar flexbox, maar na wat hulp 
+van Sanne is mijn gridhaat nu volledig verdwenen. Met grid heb ik mijn pagina in vier secties verdeeld en op basis van de grootte van de viewport heeft elke sectie een aangegeven plek op het grid. Dit heeft gezorg voor een veel netter ontwerp en logischere CSS.
+
+ ### Bevinding 5:
+
+Specifity van CSS Selectoren verbeteren, omdat deze vaak door een eerdere selectoren werden overruled.
+
+#### oplossing:
+
+Ik ben naar Sanne toegestapt om te vragen hoe ik dit probleem moet oplossen ik heb met name geleerd over de de direct parent selector ">" en dat je een class kan combineren met een section:nth-of-type(n) of dergelijke om zo een krachtigere selector te hebben.
   
 </details>
 
@@ -144,17 +162,27 @@ Het werkent maken van de skip forward and skip backward buttons.
   <summary>uitwerken bij afronden opdracht (voor week 8)</summary>
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="uitkomst opdracht 2">
-
+  <img src="readme-images/Menu_closed_Iphone.png" width="185px" alt="uitkomst opdracht 2">
+<img src="readme-images/Menu_open_Iphone.png" width="185px" alt="top">
+<img src="readme-images/Desktop_Full.png" width="375px" alt="top">
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatje(s)
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="top">
+<img src="readme-images/Desktop_Full.png" width="375px" alt="top">
+
+- Het gebruik maken van grid voor positioning and responsiveness.
+- Het Gebruik maken van een API voor voice recognition en controls
+- If Else statements gebruiken om door een array te navigeren.
+- Dom manipulatie op basis van items binnen een Array
+- Inheritance van CSS selectoren
+- Dom manipulatie voor user Feedback
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatje(s)
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="bummer">
+Het mogelijk maken van voice commands op mobile devices. De performance impact van VC was te groot en liet de website te vaak crashen 
+om het er in te houden. Ik wou het nog mogelijk maken door gebruik te maken van de "DeviceMotionEvent" maar de kreeg ik helaas niet aan de praat.
+
+<img src="readme-images/Menu_closed_Iphone.png" width="185px" alt="uitkomst opdracht 2">
+
 </details>
