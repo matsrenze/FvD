@@ -83,13 +83,14 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   <img src="readme-images/Revolve _ Iphone _ Menu Closed.png" width="190px" alt="ontwerp opdracht 2">
   
-<img src="readme-images/Revolve _ Laptop _ Menu-1.png" width="375px" alt="ontwerp opdracht 2">
+<img src="readme-images/Revolve _ Laptop _ Menu-1.png" width="420px" alt="ontwerp opdracht 2">
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
+  - Ik wil Meerder files kunnen opslaan en oproepen gebaseerd op user input.
+  - Ik wil dat ik animaties af kan laten spelen als feedback.
+  - Ik wil dat Kan kiezen welke nummer hij af wilt spelen.
+  - meerdere vormen van interactie.
   - ...
 </details>
 
@@ -107,21 +108,32 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Bevinding 1:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
+Respoonsivess op grotere Iphones (12 pro max >) laat de laptop layout zien ook als het scherm rechtop staat.
+
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
-
+Ik heb het minimum brak point verhoogd van 400 naar 450. 
 
   ### Bevinding 2:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
+  Voice commands zorgde voor veel crashes en performance issues op IOS devices. 
+
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
+  Ik heb de functie van de Voice Control functionaliteit nu in een keydown functie gezet. Deze functionaliteit is nu dus alleen beschikbaar op desktop 
+  devices. De gebruiker moet nu op de enter knop drukken om Voice control (tijdelijk) aan te zetten. Ik heb er ook voor gekozen om het tijdelijke aspect te
+  behouden om de VoiceRecognition anders te veel perfomance vraagt.
 
 
   ### Bevinding 3:
-  ...
+
+Het werkent maken van de skip forward and skip backward buttons.
+
+  #### oplossing:
+  
 </details>
 
 
