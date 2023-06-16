@@ -343,10 +343,60 @@ const handleVoiceRecognition = () => {
     }
   };
 
-
-
   // Event handler for voice recognition errors
   recognition.onerror = (event) => {
     console.error("Voice recognition error:", event.error);
   };
 };
+
+
+
+
+// Deze Code is compleet afkomstig van ChatGPT | Ik wil dat de Voice control pass getriggerd wordt als de
+// Iphone geschudt wordt.
+
+
+// Add event listener for the "devicemotion" event
+window.addEventListener("devicemotion", handleDeviceMotion);
+
+// Set the threshold for shake detection
+const shakeThreshold = 15;
+
+// Variables to store the previous acceleration values
+let lastX = null;
+let lastY = null;
+let lastZ = null;
+
+function handleDeviceMotion(event) {
+  // Retrieve the acceleration values from the event
+  const { x, y, z } = event.accelerationIncludingGravity;
+
+  // Check if the previous values exist
+  if (lastX !== null && lastY !== null && lastZ !== null) {
+    // Calculate the change in acceleration
+    const deltaX = Math.abs(lastX - x);
+    const deltaY = Math.abs(lastY - y);
+    const deltaZ = Math.abs(lastZ - z);
+
+    // Check if the change in acceleration exceeds the threshold
+    if (deltaX > shakeThreshold || deltaY > shakeThreshold || deltaZ > shakeThreshold) {
+      // Shake gesture detected, perform your desired actions here
+      console.log("Shake gesture detected!");
+
+      // Reset the previous values for the next iteration
+      lastX = null;
+      lastY = null;
+      lastZ = null;
+      
+      // Add your code to handle the shake event
+
+      handleVoiceRecognition();
+    }
+  }
+
+  // Update the previous acceleration values
+  lastX = x;
+  lastY = y;
+  lastZ = z;
+}
+
