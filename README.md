@@ -83,7 +83,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   <img src="readme-images/Revolve _ Iphone _ Menu Closed.png" width="190px" alt="ontwerp opdracht 2">
   
-<img src="readme-images/readme-images/Revolve _ Laptop _ Menu-1.png" width="375px" alt="ontwerp opdracht 2">
+<img src="readme-images/Revolve _ Laptop _ Menu-1.png" width="375px" alt="ontwerp opdracht 2">
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
