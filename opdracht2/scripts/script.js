@@ -263,6 +263,13 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+// Keyboard controls | Enable Voice Commands
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+handleVoiceRecognition();
+  }
+});
+
 
 // Hamburger Menu
 
@@ -311,11 +318,9 @@ const handleVoiceRecognition = () => {
     if (transcript.includes("boring")) {
       goToNextSong();
     }
-
     if (transcript.includes("back")) {
       goToPrevSong();
     }
-
     if (transcript.includes("scratch")) {
       const scratchFX = new Audio("./sounds/recordScratch.mp3");
       scratchFX.play();
@@ -336,8 +341,6 @@ const handleVoiceRecognition = () => {
     if (transcript.includes("play")) {
       playPause();
     }
-
-    handleVoiceRecognition();
   };
 
 
@@ -347,5 +350,3 @@ const handleVoiceRecognition = () => {
     console.error("Voice recognition error:", event.error);
   };
 };
-
-handleVoiceRecognition();
